@@ -191,7 +191,7 @@ func queryDataWithLoad(workerCount int) {
 
 	var testRows []itemSQL
 	for i := 0; i < noOfSamplesLoad; i++ {
-		docID := rand.Intn(noOfRecords)
+		docID := rand.Intn(noOfRecords-1)+1
 		rowByID := server.queryByID(docID)
 
 		if rowByID.Load >= 90 {
@@ -230,7 +230,7 @@ func queryData() {
 	var testRows []itemSQL
 	for i := 0; i < noOfSamples+10; i++ {
 
-		docID := rand.Intn(noOfRecords)
+		docID := rand.Intn(noOfRecords-1)+1
 		rowByID := server.queryByID(docID)
 
 		if rowByID.Load >= 90 {
@@ -279,15 +279,15 @@ func queryData() {
 
 // TODO: reindexer does not work with mutiple tags
 type itemSQL struct {
-	ID       int    `reindex:"id,,pk"`
-	ItemName string `reindex:"itemName"`
-	IP       string `reindex:"ip"`
-	Item1    int    `reindex:"item1,hash"`
-	Item2    int    `reindex:"item2,hash"`
-	Item3    int    `reindex:"item3,hash"`
-	Item4    int    `reindex:"item4,hash"`
-	Item5    int    `reindex:"item5,hash"`
-	Load     int    `reindex:"load,tree"`
+	ID       int    `reindex:"id,,pk" json:"id"`
+	ItemName string `reindex:"itemName" json:"itemName"`
+	IP       string `reindex:"ip" json:"ip"`
+	Item1    int    `reindex:"item1,hash" json:"item1"`
+	Item2    int    `reindex:"item2,hash" json:"item2"`
+	Item3    int    `reindex:"item3,hash" json:"item3"`
+	Item4    int    `reindex:"item4,hash" json:"item4"`
+	Item5    int    `reindex:"item5,hash" json:"item5"`
+	Load     int    `reindex:"load,tree" json:"load"`
 }
 
 func (item *itemSQL) DeepCopy() interface{} {

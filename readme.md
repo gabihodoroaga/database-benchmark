@@ -41,9 +41,11 @@ You can find out more about this topic fom this blog post [hodo.dev/posts/post-2
 
     ```bash
     # start the reindexer container
-    docker run -p9088:9088 -p6534:6534 -d reindexer/reindexer
+    docker run --name reindexer-test -p9088:9088 -p6534:6534 -d reindexer/reindexer
     # star the test
     go run . --reindexer
+    # clean up
+    docker rm --force reindexer-test
     ```
 
 ## Author 
