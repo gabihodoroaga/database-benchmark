@@ -1,6 +1,6 @@
 # database-benchmark
 
-This is a seed project to benchmark you database before you decide which want to use.
+This is a seed project to benchmark you database before you decide which one to use.
 
 You can find out more about this topic fom this blog post [hodo.dev/posts/post-23-database-benchmark](https://hodo.dev/posts/post-23-database-benchmark/)
 

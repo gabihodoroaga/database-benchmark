@@ -149,17 +149,17 @@ func printStarts(workerCount int) {
 					log.Println("Tick at", t.Format("2020-01-01 11:00:00.000"))
 					log.Println("================================")
 					log.Printf("Query template        : %s", queryTemplate)
-					log.Printf("No of workers         : %d", workerCount)
+					log.Printf("No. of workers        : %d", workerCount)
 					log.Println("--------------------------------")
-					log.Printf("No of queries batch   : %d\n", count)
-					log.Printf("No of queries / sec   : %d\n", count/batchDuration)
+					log.Printf("No. of queries batch  : %d\n", count)
+					log.Printf("No. of queries / sec  : %d\n", count/batchDuration)
 					log.Printf("Min query time        : %.3fms\n", minTime)
 					log.Printf("Max query time(100%%)  : %.3fms\n", maxTime)
 					log.Printf("Max query time(99%%)   : %.3fms\n", maxTime99)
 					log.Printf("Max query time(90%%)   : %.3fms\n", maxTime90)
 					log.Printf("Avg query time        : %.3fms\n", avgTime)
-					log.Printf("Total no of queries   : %d\n", totalCount)
-					log.Printf("Total no of error     : %d\n", errors)
+					log.Printf("Total no. of queries  : %d\n", totalCount)
+					log.Printf("Total no. of error    : %d\n", errors)
 				}
 				warmUp = false
 				resetStats()
@@ -270,7 +270,7 @@ func queryData() {
 		total += duration
 		count++
 	}
-	log.Printf("No of samples: %d\n", int(count-1))
+	log.Printf("No. of samples: %d\n", int(count-1))
 	log.Printf("Min query time: %fms\n", mind)
 	log.Printf("Max query time: %fms\n", maxd)
 	log.Printf("Avg query time: %fms\n", total/count)
